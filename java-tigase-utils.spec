@@ -16,6 +16,7 @@ License:	GPL v3
 Group:		Libraries/Java
 Source0:	https://projects.tigase.org/attachments/download/18/%{srcname}-%{version}-b%{build_id}.src.tar.gz
 # Source0-md5:	157a60680810282a5829b51626371bdb
+Patch0:		%{name}-no_svnversion.patch
 URL:		https://projects.tigase.org/projects/tigase-utils/
 %{?with_tests:BuildRequires:	ant-junit}
 BuildRequires:	java-tigase-xmltools
@@ -59,6 +60,10 @@ Kod źródłowy %{srcname}.
 
 %prep
 %setup -q -n %{srcname}-%{version}-b%{build_id}.src
+
+%patch0 -p1
+
+echo "build-no=%{build_id}" >> build.properties
 
 %build
 export JAVA_HOME="%{java_home}"
