@@ -4,7 +4,6 @@
 %bcond_without	source		# don't build source jar
 %bcond_with	tests		# build and run tests
 
-%include	/usr/lib/rpm/macros.java
 
 %define		srcname		tigase-utils
 %define		build_id	623
