@@ -60,7 +60,7 @@ Kod źródłowy %{srcname}.
 %prep
 %setup -q -n %{srcname}-%{version}-b%{build_id}.src
 
-%patch0 -p1
+%patch -P0 -p1
 
 echo "build-no=%{build_id}" >> build.properties
 
