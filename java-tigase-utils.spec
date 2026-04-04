@@ -4,13 +4,15 @@
 %bcond_without	source		# don't build source jar
 %bcond_with	tests		# build and run tests
 
+%{?use_default_jdk:%use_default_jdk 8}
+
 
 %define		srcname		tigase-utils
 %define		build_id	623
 Summary:	Tigase utility classes
 Name:		java-tigase-utils
 Version:	3.2.0
-Release:	1
+Release:	2
 License:	GPL v3
 Group:		Libraries/Java
 Source0:	https://projects.tigase.org/attachments/download/18/%{srcname}-%{version}-b%{build_id}.src.tar.gz
@@ -21,8 +23,9 @@ URL:		https://projects.tigase.org/projects/tigase-utils/
 BuildRequires:	java-tigase-xmltools
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
-BuildRequires:	rpmbuild(macros) >= 1.555
+BuildRequires:	rpmbuild(macros) >= 1.556
 BuildRequires:	sed >= 4.0
+%buildrequires_jdk
 Requires:	jpackage-utils
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
