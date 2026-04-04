@@ -12,7 +12,7 @@
 Summary:	Tigase utility classes
 Name:		java-tigase-utils
 Version:	3.2.0
-Release:	2
+Release:	3
 License:	GPL v3
 Group:		Libraries/Java
 Source0:	https://projects.tigase.org/attachments/download/18/%{srcname}-%{version}-b%{build_id}.src.tar.gz
