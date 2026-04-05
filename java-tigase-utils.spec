@@ -12,7 +12,7 @@
 Summary:	Tigase utility classes
 Name:		java-tigase-utils
 Version:	3.2.0
-Release:	4
+Release:	5
 License:	GPL v3
 Group:		Libraries/Java
 Source0:	https://projects.tigase.org/attachments/download/18/%{srcname}-%{version}-b%{build_id}.src.tar.gz
@@ -81,7 +81,10 @@ export CLASSPATH
 %endif
 
 %if %{with javadoc}
-%ant docs -Djavadoc.additionalparam="-Xdoclint:none -classpath $CLASSPATH"
+%javadoc -d docs-%{srcname}/api \
+	-Xdoclint:none \
+	-classpath $CLASSPATH \
+	$(find src -name '*.java')
 %endif
 
 %if %{with source}
